@@ -28,12 +28,8 @@
       background: var(--white);
       color: var(--text-dark);
       overflow-x: hidden;
-      cursor: none;
     }
 
-    /* ============================================================
-       NAME GATE OVERLAY — NEW ADDITION
-    ============================================================ */
     #name-gate {
       position: fixed;
       inset: 0;
@@ -153,14 +149,6 @@
     }
     #gate-input.error {
       border-color: #c0392b;
-      animation: gateShake 0.45s ease;
-    }
-    @keyframes gateShake {
-      0%,100% { transform: translateX(0); }
-      20%      { transform: translateX(-8px); }
-      40%      { transform: translateX(8px); }
-      60%      { transform: translateX(-5px); }
-      80%      { transform: translateX(5px); }
     }
 
     #gate-btn {
@@ -218,37 +206,8 @@
       margin-top: 0.5rem;
     }
 
-    /* ============================================================
-       CUSTOM CURSOR
-    ============================================================ */
-    #cursor {
-      width: 18px; height: 18px;
-      background: var(--rose);
-      border-radius: 50%;
-      position: fixed;
-      top: 0; left: 0;
-      pointer-events: none;
-      z-index: 99999;
-      transform: translate(-50%, -50%);
-      transition: transform 0.1s ease, background 0.3s;
-      mix-blend-mode: multiply;
-    }
-    #cursor-trail {
-      width: 36px; height: 36px;
-      border: 2px solid var(--rose-light);
-      border-radius: 50%;
-      position: fixed;
-      top: 0; left: 0;
-      pointer-events: none;
-      z-index: 99998;
-      transform: translate(-50%, -50%);
-      transition: all 0.25s ease;
-      mix-blend-mode: multiply;
-    }
 
-    /* ============================================================
-       LOADING SCREEN
-    ============================================================ */
+
     #loader {
       position: fixed;
       inset: 0;
@@ -283,9 +242,6 @@
       50%      { opacity: 1; }
     }
 
-    /* ============================================================
-       PARTICLE CANVAS
-    ============================================================ */
     #particle-canvas {
       position: fixed;
       inset: 0;
@@ -293,9 +249,6 @@
       z-index: 0;
     }
 
-    /* ============================================================
-       HERO SECTION
-    ============================================================ */
     #hero {
       position: relative;
       min-height: 100vh;
@@ -423,9 +376,6 @@
       50%      { transform: rotate(45deg) translateY(6px); }
     }
 
-    /* ============================================================
-       FLOATING HEARTS
-    ============================================================ */
     .floating-hearts-layer {
       position: fixed;
       inset: 0;
@@ -447,9 +397,6 @@
       100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
     }
 
-    /* ============================================================
-       LETTER / MESSAGE SECTION
-    ============================================================ */
     #message {
       position: relative;
       z-index: 1;
@@ -550,9 +497,6 @@
       transform: translateY(0);
     }
 
-    /* ============================================================
-       3D CARD GALLERY
-    ============================================================ */
     #reasons {
       position: relative;
       z-index: 1;
@@ -629,9 +573,6 @@
       font-style: italic;
     }
 
-    /* ============================================================
-       PROPOSAL SECTION
-    ============================================================ */
     #proposal {
       position: relative;
       z-index: 1;
@@ -713,7 +654,7 @@
       border: none;
       border-radius: 50px;
       padding: 1.1rem 3.5rem;
-      cursor: none;
+      cursor: pointer;
       position: relative;
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -745,9 +686,6 @@
       to { transform: scale(4); opacity: 0; }
     }
 
-    /* ============================================================
-       MODAL
-    ============================================================ */
     #modal-overlay {
       position: fixed;
       inset: 0;
@@ -812,7 +750,7 @@
       border: none;
       border-radius: 50px;
       padding: 0.9rem 2.5rem;
-      cursor: none;
+      cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 6px 24px rgba(194,48,96,0.4);
     }
@@ -821,20 +759,17 @@
     .btn-no {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.1rem;
-      color: var(--rose);
-      background: transparent;
+      color: black;
+      background: rgb(242, 134, 202);
       border: 2px solid var(--rose-light);
       border-radius: 50px;
       padding: 0.9rem 2.5rem;
-      cursor: none;
+      cursor: pointer;
       transition: all 0.3s ease;
       position: relative;
     }
     .btn-no:hover { border-color: var(--rose); color: var(--rose-deep); }
 
-    /* ============================================================
-       CELEBRATION
-    ============================================================ */
     #celebration {
       position: fixed;
       inset: 0;
@@ -843,7 +778,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(160deg, #fff0f5 0%, #ffe0ec 100%);
+      background: rgb(224, 166, 200);
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.5s ease, visibility 0.5s;
@@ -881,9 +816,6 @@
       z-index: 2001;
     }
 
-    /* ============================================================
-       SPOTIFY PLAYER
-    ============================================================ */
     #spotify-player {
       position: fixed;
       bottom: 5.5rem;
@@ -914,9 +846,6 @@
       letter-spacing: 0.05em;
     }
 
-    /* ============================================================
-       MUSIC BUTTON
-    ============================================================ */
     #music-toggle {
       position: fixed;
       bottom: 2rem;
@@ -926,7 +855,7 @@
       border-radius: 50%;
       background: linear-gradient(135deg, var(--rose) 0%, var(--rose-deep) 100%);
       border: none;
-      cursor: none;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -941,9 +870,6 @@
       50%      { box-shadow: 0 4px 40px rgba(194,48,96,0.7); }
     }
 
-    /* ============================================================
-       FOOTER
-    ============================================================ */
     footer {
       position: relative;
       z-index: 1;
@@ -961,9 +887,6 @@
       font-style: italic;
     }
 
-    /* ============================================================
-       UTILITY ANIMATIONS
-    ============================================================ */
     @keyframes slideUp {
       from { opacity: 0; transform: translateY(40px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -973,9 +896,6 @@
       to   { opacity: 1; }
     }
 
-    /* ============================================================
-       RESPONSIVE
-    ============================================================ */
     @media (max-width: 600px) {
       .letter-wrapper { padding: 2rem 1.5rem; }
       .cards-grid { grid-template-columns: repeat(2, 1fr); }
@@ -986,58 +906,50 @@
       .cards-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
     }
 
-
     .kutti-message {
-  max-width: 750px;
-  margin: 4rem auto 0;
-  padding: 2rem 2.5rem;
-  text-align: center;
+      max-width: 750px;
+      margin: 4rem auto 0;
+      padding: 2rem 2.5rem;
+      text-align: center;
+      background: linear-gradient(135deg, #fff0f4 0%, #ffe4ec 100%);
+      border: 1px solid rgba(232, 83, 122, 0.2);
+      border-radius: 20px;
+      box-shadow: 0 15px 50px rgba(232, 83, 122, 0.15);
+      position: relative;
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--text-dark);
+      line-height: 1.8;
+    }
 
-  background: linear-gradient(135deg, #fff0f4 0%, #ffe4ec 100%);
-  border: 1px solid rgba(232, 83, 122, 0.2);
-  border-radius: 20px;
+    .kutti-message h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2rem;
+      color: var(--rose);
+      margin-bottom: 1rem;
+    }
 
-  box-shadow: 0 15px 50px rgba(232, 83, 122, 0.15);
-  position: relative;
+    .kutti-message::before {
+      content: "💌";
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.8rem;
+      background: var(--white);
+      padding: 6px;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(232, 83, 122, 0.2);
+    }
 
-  font-family: 'Cormorant Garamond', serif;
-  color: var(--text-dark);
-  line-height: 1.8;
-}
-
-.kutti-message h2 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2rem;
-  color: var(--rose);
-  margin-bottom: 1rem;
-}
-
-.kutti-message::before {
-  content: "💌";
-  position: absolute;
-  top: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.8rem;
-  background: var(--white);
-  padding: 6px;
-  border-radius: 50%;
-  box-shadow: 0 5px 15px rgba(232, 83, 122, 0.2);
-}
-
-.kutti-message p {
-  font-size: 1.1rem;
-  color: var(--text-mid);
-}
+    .kutti-message p {
+      font-size: 1.1rem;
+      color: var(--text-mid);
+    }
   </style>
 </head>
 <body>
 
-  <!-- ======================================================
-       NAME GATE — shown first, removed on correct entry
-  ====================================================== -->
   <div id="name-gate">
-    <!-- Decorative rings -->
     <div class="gate-petal-ring"></div>
     <div class="gate-petal-ring"></div>
     <div class="gate-petal-ring"></div>
@@ -1063,23 +975,14 @@
     </div>
   </div>
 
-  <!-- Custom cursor -->
-  <div id="cursor">❤</div>
-  <div id="cursor-trail"></div>
 
 
-  <!-- Ambient floating hearts layer -->
+  
+
   <div class="floating-hearts-layer" id="floatingHearts"></div>
-
-  <!-- Particle canvas -->
   <canvas id="particle-canvas"></canvas>
-
-  <!-- Confetti canvas -->
   <canvas id="confetti-canvas"></canvas>
 
-  <!-- ======================================================
-       HERO
-  ====================================================== -->
   <section id="hero">
     <div class="petal-ring"></div>
     <div class="petal-ring"></div>
@@ -1106,40 +1009,31 @@
     </div>
   </section>
 
-  <!-- ======================================================
-       LOVE LETTER
-  ====================================================== -->
   <section id="message">
     <p class="section-label fade-in-el">✦ A love letter ✦</p>
 
     <div class="letter-wrapper fade-in-el">
-      <p class="letter-salutation">Dearest Valar Mathi,</p>
+      <p class="letter-salutation">My dear Valarmathi,</p>
 
       <div class="letter-body">
         <p class="fade-in-el">
-          There are <span class="highlight">7.9 billion people</span> on this earth, and yet the universe conspired to bring you into my world — and for that, I am endlessly, deeply grateful.
+          There are so many people in this world — yet why must I see you? Why would the universe make me see you?
         </p>
         <p class="fade-in-el">
-          I don't know how to explain it. The way you carry yourself, the warmth in your laughter, the quiet grace in everything you do — it moves something inside me that no words have ever quite reached before.
+          How do I put it? The way you carry yourself, your laughter, your beauty — I watch and admire it all from a distance. And I often find myself thinking that, someday, I want to be the very reason behind that smile.
         </p>
         <p class="fade-in-el">
-          I've kept this to myself for too long, afraid of what you might think. But today, I choose courage over silence, because some feelings deserve to be spoken — even if they tremble on the way out.
+          I was afraid — afraid of what you might think if I approached you to talk, or how you would react if I were to propose my love to you — and it was this fear that kept me from even coming near to speak with you all this time. But I can no longer remain silent; that is why I have finally told you.
         </p>
         <p class="fade-in-el">
-          <span class="highlight">I like you, Valar Mathi.</span> Not the casual, fleeting kind — but the kind that notices how you smile when you think no one is watching, and quietly hopes to be the reason for that smile, someday.
-        </p>
-        <p class="fade-in-el">
-          I'm not asking you to feel the same. I'm only asking you to know — that to me, you are something very, very special.
+          <span class="highlight">You are very, very special to me.</span>
         </p>
       </div>
 
-      <p class="letter-sign">With all my heart,<br>Someone who truly admires you 🌹</p>
+      <p class="letter-sign">With all my heart,<br>Someone who truly loves you with his whole heart 🌹</p>
     </div>
   </section>
 
-  <!-- ======================================================
-       REASONS / 3D CARDS
-  ====================================================== -->
   <section id="reasons">
     <h2 class="reasons-title fade-in-el">Why You, You Ask?</h2>
     <p class="reasons-sub fade-in-el">Hover each card to discover…</p>
@@ -1153,7 +1047,8 @@
             <div class="card-title">Your Grace</div>
           </div>
           <div class="card-back">
-            <p class="card-back-text">The way you move through the world — quietly, gently, beautifully — takes my breath away every time.</p>
+            <p class="card-back-text">Your grace touched my heart with a gentle calm—
+and in that very moment, my entire world slowly came to a standstill.</p>
           </div>
         </div>
       </div>
@@ -1165,7 +1060,9 @@
             <div class="card-title">Your Light</div>
           </div>
           <div class="card-back">
-            <p class="card-back-text">Even the dullest room grows warmer the moment you walk in. You are someone's sunshine.</p>
+            <p class="card-back-text">Your light is the lamp that guides me through my darkness;
+Only with you does my life shine bright.
+</p>
           </div>
         </div>
       </div>
@@ -1177,7 +1074,9 @@
             <div class="card-title">Your Words</div>
           </div>
           <div class="card-back">
-            <p class="card-back-text">The things you say matter. Your thoughts are thoughtful, your kindness is real, and your voice is unforgettable.</p>
+            <p class="card-back-text">Your words are like medicine to my heart;
+Every single word is etched deep within my soul.
+</p>
           </div>
         </div>
       </div>
@@ -1189,7 +1088,9 @@
             <div class="card-title">Your Soul</div>
           </div>
           <div class="card-back">
-            <p class="card-back-text">Behind every smile you share lives a soul that is kind, rare, and worth every poem ever written.</p>
+            <p class="card-back-text">Your soul is a melody of pure purity;
+When I listen to it, my heart finds peace.
+</p>
           </div>
         </div>
       </div>
@@ -1201,7 +1102,9 @@
             <div class="card-title">Your Laughter</div>
           </div>
           <div class="card-back">
-            <p class="card-back-text">When you laugh, the whole world pauses — just for a moment — to admire something genuinely lovely.</p>
+            <p class="card-back-text">Your smile completely transforms my day;
+When I hear it, all my worries simply fade away.
+</p>
           </div>
         </div>
       </div>
@@ -1213,19 +1116,21 @@
             <div class="card-title">Simply You</div>
           </div>
           <div class="card-back">
-            <p class="card-back-text">No particular reason needed. You are you — and that alone is more than enough.</p>
+            <p class="card-back-text">You alone are enough to complete my life;
+It is because of you that I become who I truly am. 💙</p>
           </div>
         </div>
       </div>
 
     </div>
+
     <div class="kutti-message">
-  <h2>Kutti Message</h2>
-  <p>
-    Kadasiya oru vishiyam…  
+      <h2>Kutti Message</h2>
+      <p>
+        Kadasiya oru vishiyam…  
 Naa unna love panna reason solla theriyala.
 
-“Indha kandavudan kadhal” nu solluvaanga la…  
+"Indha kandavudan kadhal" nu solluvaanga la…  
 Adhe maari thaan, unna paathadhum love panna-nu thonuchu.
 
 Nee evvalo thadava enna ignore pannalum,  
@@ -1236,14 +1141,10 @@ adhu romba azhaga irukkum nu thonudhu.
 
 Unna love panna…  
 unnoda life full ah irukka, accept pannuvaayaa? 
-  </p>
-</div>
+      </p>
+    </div>
   </section>
 
-
-  <!-- ======================================================
-       PROPOSAL CTA
-  ====================================================== -->
   <section id="proposal">
     <div class="petal-bg" id="petalBg"></div>
 
@@ -1258,17 +1159,11 @@ unnoda life full ah irukka, accept pannuvaayaa?
     </button>
   </section>
 
-  <!-- ======================================================
-       FOOTER
-  ====================================================== -->
   <footer>
     <div class="footer-heart">🌹</div>
     <p class="footer-text">Made with a heart full of feelings, just for Valar Mathi.</p>
   </footer>
 
-  <!-- ======================================================
-       MODAL
-  ====================================================== -->
   <div id="modal-overlay">
     <div class="modal-box">
       <div class="modal-emoji">🌹</div>
@@ -1283,18 +1178,37 @@ unnoda life full ah irukka, accept pannuvaayaa?
     </div>
   </div>
 
-  <!-- ======================================================
-       CELEBRATION
-  ====================================================== -->
   <div id="celebration">
     <div class="cel-heart">💖</div>
     <h2 class="cel-title">She Said Yes! 🎉</h2>
     <p class="cel-msg">This moment is everything. Thank you, Valar Mathi. 🌹</p>
   </div>
 
-  
-
   <script>
+  /* ============================================================
+     TELEGRAM NOTIFICATION
+  ============================================================ */
+  const TELEGRAM_TOKEN  = "8002944908:AAG4yRUJ5NwZPZHvY4jYC6kknlujOKRktDs";
+  const TELEGRAM_CHAT_ID = "8201958480";
+
+  async function sendTelegramMessage() {
+    const text = "🎉 Congratulations! She accepted you. 💖🌹";
+    const url  = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
+    try {
+      await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: TELEGRAM_CHAT_ID,
+          text: text,
+          parse_mode: "HTML"
+        })
+      });
+    } catch (err) {
+      console.error("Telegram notification failed:", err);
+    }
+  }
+
   /* ============================================================
      NAME GATE LOGIC
   ============================================================ */
@@ -1307,11 +1221,9 @@ unnoda life full ah irukka, accept pannuvaayaa?
     const val   = input.value.trim().toLowerCase().replace(/\s+/g, '');
 
     if (val === CORRECT_NAME) {
-      // Correct — unlock with a graceful transition
       error.classList.remove('show');
       gate.classList.add('unlocking');
 
-      // Show the loader briefly for a beautiful reveal
       setTimeout(() => {
         gate.style.display = 'none';
         const loader = document.getElementById('loader');
@@ -1328,9 +1240,8 @@ unnoda life full ah irukka, accept pannuvaayaa?
       }, 900);
 
     } else {
-      // Wrong — shake and show error
       input.classList.remove('error');
-      void input.offsetWidth; // reflow to restart animation
+      void input.offsetWidth;
       input.classList.add('error');
       error.classList.add('show');
       input.value = '';
@@ -1338,13 +1249,12 @@ unnoda life full ah irukka, accept pannuvaayaa?
     }
   }
 
-  // Allow Enter key
   document.getElementById('gate-input').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') checkName();
   });
 
   /* ============================================================
-     PAGE ANIMATIONS — called after gate unlocks
+     PAGE ANIMATIONS
   ============================================================ */
   function startPageAnimations() {
     spawnHearts();
@@ -1356,17 +1266,7 @@ unnoda life full ah irukka, accept pannuvaayaa?
     for (let i = 0; i < 10; i++) spawnHeart();
   }
 
-  /* ============================================================
-     CURSOR
-  ============================================================ */
-  const cursor      = document.getElementById('cursor');
-  const cursorTrail = document.getElementById('cursor-trail');
-  document.addEventListener('mousemove', e => {
-    cursor.style.left      = e.clientX + 'px';
-    cursor.style.top       = e.clientY + 'px';
-    cursorTrail.style.left = e.clientX + 'px';
-    cursorTrail.style.top  = e.clientY + 'px';
-  });
+
 
   /* ============================================================
      FLOATING HEARTS
@@ -1453,6 +1353,7 @@ unnoda life full ah irukka, accept pannuvaayaa?
      YES / NO HANDLERS
   ============================================================ */
   function onYes() {
+    sendTelegramMessage();
     closeModal();
     setTimeout(() => {
       document.getElementById('celebration').classList.add('show');
