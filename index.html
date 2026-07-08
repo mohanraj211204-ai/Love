@@ -573,6 +573,63 @@
       font-style: italic;
     }
 
+    /* SONG DEDICATION PLAYER */
+    .song-dedication {
+      max-width: 750px;
+      margin: 2.5rem auto 0;
+      padding: 1.4rem 1.8rem;
+      background: linear-gradient(135deg, #fff0f4 0%, #ffe4ec 100%);
+      border: 1px solid rgba(232, 83, 122, 0.2);
+      border-radius: 20px;
+      box-shadow: 0 15px 50px rgba(232, 83, 122, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .song-dedication-text {
+      text-align: left;
+      font-family: 'Cormorant Garamond', serif;
+      flex: 1;
+      min-width: 180px;
+    }
+    .song-dedication-text .song-label {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.3rem;
+      color: var(--rose);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .song-dedication-text .song-name {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      font-style: italic;
+    }
+    #song-play-btn {
+      flex-shrink: 0;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      border: none;
+      background: linear-gradient(135deg, var(--rose) 0%, var(--rose-deep) 100%);
+      color: #fff;
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(194,48,96,0.4);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    #song-play-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 30px rgba(194,48,96,0.5);
+    }
+    #song-play-btn.playing {
+      animation: musicPulse 1.5s ease-in-out infinite;
+    }
+
     #proposal {
       position: relative;
       z-index: 1;
@@ -1143,6 +1200,16 @@ Unna love panna…
 unnoda life full ah irukka, accept pannuvaayaa? 
       </p>
     </div>
+
+    <div class="song-dedication">
+      <div class="song-dedication-text">
+        <span class="song-label">Ippo idhu kelu…</span>
+        <span class="song-name">unakku dedicate pannuren</span>
+      </div>
+      <button id="song-play-btn" onclick="toggleSong()" aria-label="Play or pause song"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+      <audio id="song-audio" preload="none" src="https://res.cloudinary.com/dyydbqmt1/video/upload/v1783482647/kannana-kanne_JFlwpux4_itulc4.mp3"></audio>
+    </div>
+
   </section>
 
   <section id="proposal">
@@ -1324,6 +1391,34 @@ unnoda life full ah irukka, accept pannuvaayaa?
   }, { threshold: 0.15 });
 
   document.querySelectorAll('.fade-in-el').forEach(el => observer.observe(el));
+
+   /* ============================================================
+     SONG DEDICATION PLAYER
+  ============================================================ */
+  const songAudio  = document.getElementById('song-audio');
+  const songBtn     = document.getElementById('song-play-btn');
+
+  function toggleSong() {
+    if (songAudio.paused) {
+      songAudio.play().catch(err => console.error('Playback failed:', err));
+    } else {
+      songAudio.pause();
+    }
+  }
+
+  songAudio.addEventListener('play', () => {
+    songBtn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>`;
+    songBtn.classList.add('playing');
+  });
+  songAudio.addEventListener('pause', () => {
+    songBtn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>`;
+    songBtn.classList.remove('playing');
+  });
+  songAudio.addEventListener('ended', () => {
+    songBtn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>`;
+    songBtn.classList.remove('playing');
+  });
+
 
   /* ============================================================
      MODAL
